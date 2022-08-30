@@ -1,9 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { Button } from '@ds.e/react';
 
-import '@ds.e/scss/lib/Button.css';
+import { Color } from '@ds.e/react';
+import '@ds.e/scss/lib/Utilities.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
-root.render(<Button type="button" label='Example button' />);
+root.render(<Color hexCode='blue' width='lg' height='lg' />);
