@@ -4,11 +4,13 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "lerna": "^5.4.3"
+    "lerna": "^5.4.3",
+    "process": "^0.11.10"
   },
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "playgrounds/*"
     ],
     "nohoist": [
       "**/normalize-scss"
