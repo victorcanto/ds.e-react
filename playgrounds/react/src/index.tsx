@@ -1,9 +1,18 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { Color } from '@ds.e/react';
+import { Text, Margin } from '@ds.e/react';
+import '@ds.e/scss/lib/Text.css';
+import '@ds.e/scss/lib/Margin.css';
 import '@ds.e/scss/lib/Utilities.css';
+import '@ds.e/scss/lib/global.css';
 
 const container = document.getElementById('root');
 const root = createRoot(container!);
-root.render(<Color hexCode='blue' width='lg' height='lg' />);
+root.render(
+  <div>
+    <Margin>
+      <Text size='xl'>this is some text</Text>
+    </Margin>
+  </div>
+);
