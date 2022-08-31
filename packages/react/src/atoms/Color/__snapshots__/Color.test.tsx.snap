@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshot Color atom 1`] = `
+<DocumentFragment>
+  <div
+    class="dse-width-xl dse-height-xl"
+    style="background-color: red;"
+  />
+</DocumentFragment>
+`;

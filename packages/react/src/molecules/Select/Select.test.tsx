@@ -1,24 +1,8 @@
 import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
 import Select from './Select';
 
-import { render, fireEvent } from '@testing-library/react';
-
-const optionsMock = [
-  {
-    label: 'Strict Black',
-    value: 'strict-black',
-  },
-  {
-    label: 'Heavenly Green',
-    value: 'heavenly-green',
-  },
-  {
-    label: 'Sweet Pink',
-    value: 'pink',
-  },
-];
-
-const labelMock = 'THIS IS CUSTOM LABEL';
+import { labelMock, optionsMock } from './mocks';
 
 test('should renders all options passed to it', () => {
   const { getAllByRole, getByTestId } = render(
