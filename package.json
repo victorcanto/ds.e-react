@@ -26,7 +26,8 @@
     "dev": "yarn lerna run dev",
     "test": "yarn lerna run test",
     "commit": "yarn git-cz",
-    "test:chromatic": "yarn lerna run test:chromatic"
+    "test:chromatic": "yarn lerna run test:chromatic",
+    "build-storybook": "yarn build && yarn lerna run build-storybook"
   },
   "config": {
     "commitizen": {
