@@ -4,7 +4,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import Select, { SelectProps } from './Select';
 import { labelMock, optionsMock } from './mocks';
 
-import '@ds.e/scss/lib/Select.css';
+import '@ds.e/sass/lib/Select.css';
 
 export default {
   title: 'Molecules|Select',

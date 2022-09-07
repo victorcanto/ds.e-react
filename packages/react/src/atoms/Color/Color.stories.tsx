@@ -5,7 +5,7 @@ import Color, { ColorProps } from './Color';
 
 import { Spacing } from '@ds.e/foundation';
 
-import '@ds.e/scss/lib/Utilities.css';
+import '@ds.e/sass/lib/Utilities.css';
 
 export default {
   title: 'Atoms|Color',

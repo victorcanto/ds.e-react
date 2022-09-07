@@ -1,0 +1,10 @@
+@import "foundation/main";
+
+.dse-button-container {
+
+  background: $btn-primary-bg;
+  border: 0;
+  color: $btn-primary-color;
+  display: flex;
+  padding: map-get($spacing, "xxxs");
+}
