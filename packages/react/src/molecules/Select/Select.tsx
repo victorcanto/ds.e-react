@@ -184,70 +184,71 @@ const Select = ({
           />
         </svg>
       </button>
-      {isOpen ? (
-        <ul
-          role='menu'
-          id='dse-select-list'
-          style={{ top: overlayTop }}
-          className='dse-select__overlay'>
-          {options.map((option, optionIndex) => {
-            const isSelected = selectedIndex === optionIndex;
-            const isHighlighted = hightlightedIndex === optionIndex;
 
-            const ref = optionRefs[optionIndex];
+      <ul
+        role='menu'
+        id='dse-select-list'
+        style={{ top: overlayTop }}
+        className={`dse-select__overlay ${
+          isOpen ? 'dse-select__overlay--open' : ''
+        }`}>
+        {options.map((option, optionIndex) => {
+          const isSelected = selectedIndex === optionIndex;
+          const isHighlighted = hightlightedIndex === optionIndex;
 
-            const renderOptionProps: RenderOptionProps = {
-              option,
-              isSelected,
-              getOptionRecommendedProps: (overrideProps = {}) => {
-                return {
-                  ref,
-                  role: 'menuitemradio',
-                  'aria-label': option.label,
-                  'aria-checked': isSelected ? true : undefined,
-                  onKeyDown: onOptionKeyDown,
-                  tabIndex: isHighlighted ? -1 : 0,
-                  onMouseEnter: () => highlightedOption(optionIndex),
-                  onMouseLeave: () => highlightedOption(null),
-                  className: `dse-select__option
+          const ref = optionRefs[optionIndex];
+
+          const renderOptionProps: RenderOptionProps = {
+            option,
+            isSelected,
+            getOptionRecommendedProps: (overrideProps = {}) => {
+              return {
+                ref,
+                role: 'menuitemradio',
+                'aria-label': option.label,
+                'aria-checked': isSelected ? true : undefined,
+                onKeyDown: onOptionKeyDown,
+                tabIndex: isHighlighted ? -1 : 0,
+                onMouseEnter: () => highlightedOption(optionIndex),
+                onMouseLeave: () => highlightedOption(null),
+                className: `dse-select__option
                   ${isSelected ? 'dse-select__option--selected' : ''}
                   ${isHighlighted ? 'dse-select__option--highlighted' : ''}
                 `,
-                  key: option.value,
-                  onClick: () => onOptionSelectedHandler(option, optionIndex),
-                  ...overrideProps,
-                };
-              },
-            };
+                key: option.value,
+                onClick: () => onOptionSelectedHandler(option, optionIndex),
+                ...overrideProps,
+              };
+            },
+          };
 
-            if (renderOption) {
-              return renderOption(renderOptionProps);
-            }
-            return (
-              <li {...renderOptionProps.getOptionRecommendedProps()}>
-                <Text>{option.label}</Text>
-                {isSelected ? (
-                  <svg
-                    width='1rem'
-                    height='1rem'
-                    xmlns='http://www.w3.org/2000/svg'
-                    fill='none'
-                    viewBox='0 0 24 24'
-                    strokeWidth={1.5}
-                    stroke='currentColor'
-                    className='w-6 h-6'>
-                    <path
-                      strokeLinecap='round'
-                      strokeLinejoin='round'
-                      d='M4.5 12.75l6 6 9-13.5'
-                    />
-                  </svg>
-                ) : null}
-              </li>
-            );
-          })}
-        </ul>
-      ) : null}
+          if (renderOption) {
+            return renderOption(renderOptionProps);
+          }
+          return (
+            <li {...renderOptionProps.getOptionRecommendedProps()}>
+              <Text>{option.label}</Text>
+              {isSelected ? (
+                <svg
+                  width='1rem'
+                  height='1rem'
+                  xmlns='http://www.w3.org/2000/svg'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  strokeWidth={1.5}
+                  stroke='currentColor'
+                  className='w-6 h-6'>
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    d='M4.5 12.75l6 6 9-13.5'
+                  />
+                </svg>
+              ) : null}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
